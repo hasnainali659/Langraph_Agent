@@ -20,8 +20,8 @@ load_dotenv()
 
 @tool
 def decorated_colored_print(message: str):
-    """Prints a message in a decorated and colored format."""
-    print(f"{'*' * 10} {message} {'*' * 10}")
+    """returns a message in a decorated and colored format."""
+    return f"{'*' * 10} {message} {'*' * 10}"
 
 llm = ChatOpenAI(model="gpt-4-turbo", temperature=0.3)
 
@@ -62,6 +62,8 @@ workflow.add_edge("test_query", END)
 
 app = workflow.compile()
 
-query = "what is langchain? Provide answer in a decorated colored print format."
+query = "what is langchain?"
 
 output = app.invoke({"initial_query": query})
+
+print(output)

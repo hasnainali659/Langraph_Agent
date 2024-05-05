@@ -1,7 +1,6 @@
 from langchain_core.prompts import PromptTemplate
 
 def get_react_prompt_template():
-    # Get the react prompt template
     return PromptTemplate.from_template("""Answer the following questions as best you can. You have access to the following tools:
 
 {tools}
